@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FortniteLauncher", "FortniteLauncher.csproj", "{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Debug|x64.ActiveCfg = Debug|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Debug|x86.ActiveCfg = Debug|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Debug|x86.Build.0 = Debug|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Release|Any CPU.ActiveCfg = Release|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Release|x64.ActiveCfg = Release|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Release|x86.ActiveCfg = Release|x86
+		{BAFEEF0A-F055-41EF-BD77-854074C1C4B4}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C5BE28A-CA54-4D98-9C45-898D630F11C0}
+	EndGlobalSection
+EndGlobal
