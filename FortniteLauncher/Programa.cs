@@ -8,7 +8,11 @@ namespace FortniteLauncher
 {
     internal class Programa
     {
-        public static string GenerarToken(string authCode)
+        public static readonly string binPath = @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\";
+        public static readonly string shippingExe = $"{binPath}FortniteClient-Win64-Shipping.exe";
+        static Process _fnProcess;
+
+        public static string GetToken(string authCode)
         {
             Console.WriteLine("Requesting access token...");
             var cliente = new RestClient("https://account-public-service-prod.ol.epicgames.com/account/api/oauth/token");
@@ -33,8 +37,8 @@ namespace FortniteLauncher
             Environment.Exit(0);
             return "error";
         }
-
-        public static string GenerarExchange(string token)
+        
+        public static string GetExchange(string token)
         {
             Console.WriteLine("Requesting exchange code...");
             var cliente = new RestClient("https://account-public-service-prod.ol.epicgames.com/account/api/oauth/exchange");
@@ -57,25 +61,25 @@ namespace FortniteLauncher
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
                 Console.WriteLine("Authorization requiered:");
-                token = GenerarToken(Console.ReadLine());
-                exchange = GenerarExchange(token);
+                token = GetToken(Console.ReadLine());
+                exchange = GetExchange(token);
                 authType = "exchangecode";
             }
 
-            Process _fnProceso = new Process
+            _fnProcess = new Process
             {
                 StartInfo =
                 {
-                    FileName = "FortniteClient-Win64-Shipping",
+                    FileName = shippingExe,
                     Arguments = $"-obfuscationid=CPq5rJkwv1mtzq9tgkidFHE_L9wZqg -AUTH_LOGIN=unused -AUTH_PASSWORD={exchange} -AUTH_TYPE={authType} -epicapp=Fortnite -epicenv=Prod -EpicPortal -noeac -nobe -fltoken=fdd9g715h4i20110dd40d7d3",
                     UseShellExecute = false,
                     RedirectStandardOutput = true,
                     RedirectStandardError = true
                 }
             };
-            _fnProceso.Start();
-            AsyncStreamReader asyncOutputReader = new AsyncStreamReader(_fnProceso.StandardOutput);
-            AsyncStreamReader asyncErrorReader = new AsyncStreamReader(_fnProceso.StandardError);
+            _fnProcess.Start();
+            AsyncStreamReader asyncOutputReader = new AsyncStreamReader(_fnProcess.StandardOutput);
+            AsyncStreamReader asyncErrorReader = new AsyncStreamReader(_fnProcess.StandardError);
 
             asyncOutputReader.DataReceived += delegate (object sender, string data)
             {
@@ -92,7 +96,7 @@ namespace FortniteLauncher
             asyncOutputReader.Start();
             asyncErrorReader.Start();
 
-            _fnProceso.WaitForExit();
+            _fnProcess.WaitForExit();
         }
     }
 }
