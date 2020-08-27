@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-public class AsyncStreamReader
+public partial class AsyncStreamReader
 {
     public event EventHandler<string> DataReceived;
 
