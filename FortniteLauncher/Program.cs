@@ -6,7 +6,7 @@ using RestSharp;
 
 namespace FortniteLauncher
 {
-    internal class Programa
+    internal class Program
     {
         public static readonly string binPath = @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\";
         public static readonly string shippingExe = $"{binPath}FortniteClient-Win64-Shipping.exe";
@@ -37,7 +37,7 @@ namespace FortniteLauncher
             Environment.Exit(0);
             return "error";
         }
-        
+
         public static string GetExchange(string token)
         {
             Console.WriteLine("Requesting exchange code...");
