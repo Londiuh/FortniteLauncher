@@ -2,12 +2,12 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("FortniteLauncher")]
+[assembly: AssemblyTitle("fLauncher")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ElLondiuh")]
-[assembly: AssemblyProduct("FortniteLauncher")]
-[assembly: AssemblyCopyright("Copyright ©  2020 ElLondiuh")]
+[assembly: AssemblyProduct("fLauncher")]
+[assembly: AssemblyCopyright("Copyright © ElLondiuh")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
