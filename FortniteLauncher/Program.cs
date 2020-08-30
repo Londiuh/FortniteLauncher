@@ -9,6 +9,7 @@ namespace FortniteLauncher
 {
     internal class Program
     {
+        //Change this path if you have Fortnite installed in a custom directory
         public static readonly string binPath = @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\";
         public static readonly string launcherExe = $"{binPath}FortniteLauncher.exe";
         public static readonly string shippingExe = $"{binPath}FortniteClient-Win64-Shipping.exe";
