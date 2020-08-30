@@ -85,28 +85,18 @@ namespace FortniteLauncher
                     FileName = shippingExe,
                     Arguments = launchArgs,
                     UseShellExecute = false,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true
+                    RedirectStandardOutput = true
                 }
             };
             _fnProcess.Start();
             AsyncStreamReader asyncOutputReader = new AsyncStreamReader(_fnProcess.StandardOutput);
-            AsyncStreamReader asyncErrorReader = new AsyncStreamReader(_fnProcess.StandardError);
 
             asyncOutputReader.DataReceived += delegate (object sender, string data)
             {
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(data);
-            };
-
-            asyncErrorReader.DataReceived += delegate (object sender, string data)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(data);
             };
 
             asyncOutputReader.Start();
-            asyncErrorReader.Start();
 
             //If the game is closed kill the launcher and the eac shipping
             _fnProcess.WaitForExit();
