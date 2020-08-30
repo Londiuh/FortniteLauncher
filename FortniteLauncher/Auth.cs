@@ -19,11 +19,12 @@ namespace FortniteLauncher
             request.AddParameter("code", authCode);
 
             string reply = client.Execute(request).Content;
-            Console.WriteLine(reply);
+            //Console.WriteLine(reply);
             var TokenAcceso = JsonSerializer.Deserialize<Token>(reply);
             if (TokenAcceso.AccessToken != null)
             {
                 Console.WriteLine("Access token successfully generated");
+                Console.WriteLine($"Logged in as {TokenAcceso.DisplayName} ({TokenAcceso.InAppId})");
                 return TokenAcceso.AccessToken;
             }
             Console.ForegroundColor = ConsoleColor.Red;
