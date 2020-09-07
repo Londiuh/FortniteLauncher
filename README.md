@@ -1,8 +1,10 @@
 # FortniteLauncher
-Fully working custom Fortnite launcher written in C# which can bypass anti-cheat and enables console output
+Fully working custom Fortnite launcher written in C# which can bypass anti-cheat, can auto inject SSL bypass and enables console output
 
 ## How to use it?
-- Compile it
+- Download the source
+- If needed, change the path variables
+- Compile the project
 - Launch it
 - Say to the console if you want to auth (y or n)
 - Type a valid authcode for `fortnitePCGameClient` (if you want to auth)
