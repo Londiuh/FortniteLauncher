@@ -22,6 +22,9 @@ namespace FortniteLauncher
         static string token = "unused";
         static string exchange = "unused";
         static string authType = "unused";
+        //Change this path to your ssl pinning bypass
+        //If the path doesn't exist, the injection will be skipped
+        public static string sslBypassDLL = @".\Platanium.dll";
 
         static void Main(string[] args)
         {
@@ -95,6 +98,8 @@ namespace FortniteLauncher
             };
 
             asyncOutputReader.Start();
+
+            Injector.InjectDll(_fnProcess.Id, sslBypassDLL);
 
             //If the game is closed kill the launcher and the eac shipping
             _fnProcess.WaitForExit();
