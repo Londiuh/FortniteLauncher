@@ -59,7 +59,7 @@ namespace FortniteLauncher
             _fnLauncher.Start();
             foreach (ProcessThread thread in _fnLauncher.Threads)
             {
-                Win32.Thread_Suspend(Win32.Thread_GetHandle(thread.Id));
+                Win32.SuspendThread(Win32.OpenThread(0x0002, false, thread.Id));
             }
 
             _fnEacProcess = new Process
@@ -74,7 +74,7 @@ namespace FortniteLauncher
             _fnEacProcess.Start();
             foreach (ProcessThread thread in _fnEacProcess.Threads)
             {
-                Win32.Thread_Suspend(Win32.Thread_GetHandle(thread.Id));
+                Win32.SuspendThread(Win32.OpenThread(0x0002, false, thread.Id));
             }
 
             //AsyncStreamReaders and RedirectStandardOutput to have fortnite output in the console
