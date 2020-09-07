@@ -8,20 +8,20 @@ namespace FortniteLauncher
     internal class Program
     {
         //Change this path if you have Fortnite installed in a custom directory
-        public static readonly string binPath = @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\";
-        public static readonly string launcherExe = $"{binPath}FortniteLauncher.exe";
-        public static readonly string shippingExe = $"{binPath}FortniteClient-Win64-Shipping.exe";
-        public static readonly string eacShippingExe = $"{binPath}FortniteClient-Win64-Shipping_EAC.exe";
+        static readonly string binPath = @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\";
+        static readonly string launcherExe = $"{binPath}FortniteLauncher.exe";
+        static readonly string shippingExe = $"{binPath}FortniteClient-Win64-Shipping.exe";
+        static readonly string eacShippingExe = $"{binPath}FortniteClient-Win64-Shipping_EAC.exe";
         //public static readonly string beShippingExe = $"{binPath}FortniteClient-Win64-Shipping_BE.exe";
         //The obfuscationid changes in every fortnite update
-        public static readonly string obfuscationid = "52NaH6zbK4lg_U3VrUqEZicBycMpZw";
+        static readonly string obfuscationid = "52NaH6zbK4lg_U3VrUqEZicBycMpZw";
         static Process _fnProcess;
         static Process _fnEacProcess;
         static Process _fnLauncher;
         // Default values, this values are changed if you auth
-        public static string token = "unused";
-        public static string exchange = "unused";
-        public static string authType = "unused";
+        static string token = "unused";
+        static string exchange = "unused";
+        static string authType = "unused";
 
         static void Main(string[] args)
         {
