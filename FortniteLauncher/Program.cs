@@ -16,7 +16,7 @@ namespace FortniteLauncher
         public static readonly string eacShippingExe = $"{binPath}FortniteClient-Win64-Shipping_EAC.exe";
         //public static readonly string beShippingExe = $"{binPath}FortniteClient-Win64-Shipping_BE.exe";
         //The obfuscationid changes in every fortnite update
-        public static readonly string obfuscationid = "2DgGDiN4ZBB0TKHnkkCtGEJ2EzroWg";
+        public static readonly string obfuscationid = "52NaH6zbK4lg_U3VrUqEZicBycMpZw";
         static Process _fnProcess;
         static Process _fnEacProcess;
         static Process _fnLauncher;
