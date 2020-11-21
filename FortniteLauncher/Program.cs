@@ -39,7 +39,7 @@ namespace FortniteLauncher
             Console.WriteLine("Do you want to authenticate? Y | N");
             if (Console.ReadKey().Key == ConsoleKey.Y)
             {
-                Console.WriteLine("Authorization requiered:");
+                Console.WriteLine("\nAuthorization requiered:");
                 token = Auth.GetToken(Console.ReadLine());
                 exchange = Auth.GetExchange(token);
                 authType = "exchangecode";
